@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "python": "^0.0.4"
+    "python": "^0.0.4",
+    "webdriver-manager": "^12.1.9"
   }
 }
