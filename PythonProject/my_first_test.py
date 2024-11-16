@@ -8,12 +8,24 @@ service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service)
 
 # go to the google site
-driver.get("https://www.google.com")
+driver.get("https://demo.automationtesting.in/Register.html")
+
+# accepts the concent banner
+concentButton = driver.find_element(By.XPATH, "//button[contains(@class, 'fc-cta-consent')]")
+concentButton.click()
 
 # search for "Asimov Academy" text
-search_box = driver.find_element(by=By.NAME, value="q")
-search_box.send_keys("Asimov Academy")
-search_box.submit()
+firstName = driver.find_element(By.XPATH, "//input[@ng-model='FirstName']")
+firstName.click()
+firstName.send_keys("MyFirstName")
+
+lastName = driver.find_element(By.XPATH, "//input[@ng-model='LastName']")
+lastName.click()
+lastName.send_keys("MyLastName")
+
+addressInput = driver.find_element(By.XPATH, "//textarea[@ng-model='Adress']")
+addressInput.click()
+addressInput.send_keys("My address in Portugal is secret")
 
 # close the window
-driver.quit()
+#driver.quit()
