@@ -6,6 +6,8 @@ python3 -m venv myenv
 ### to active it
 source myenv/bin/activate
 
-#### install the dependencies
-pip3 install selenium
-pip3 install webdriver-manager
+#### install requirements
+pip install -r requirements.txt
+
+### to execute project
+myenv/bin/python my_first_test.py
