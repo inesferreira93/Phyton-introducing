@@ -1,3 +1,6 @@
-.idea
+# Ignorar arquivos de log
 *.log
-__pycache__
+
+# Ignorar arquivos pyc
+*.pyc
+__pycache__/

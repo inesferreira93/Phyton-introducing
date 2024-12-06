@@ -10,4 +10,6 @@ source myenv/bin/activate
 pip install -r requirements.txt
 
 ### to execute project
-myenv/bin/python my_first_test.py
+myenv/bin/python my_first_test.py # deprecated
+
+use this command: pytest tests/  
