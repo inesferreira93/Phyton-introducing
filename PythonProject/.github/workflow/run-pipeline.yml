@@ -21,13 +21,11 @@ jobs:
         with:
           python-version: '3.9'
 
-      # Installing the dependencies
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # Execute the tests
       - name: Run tests
         run: |
-          pytest
+          pytest --maxfail=1 --disable-warnings
