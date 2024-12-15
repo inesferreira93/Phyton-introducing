@@ -19,7 +19,12 @@ class RegisterPage:
 
     # Métodos para interagir com a página
     def accept_user_concents(self):
-        self.driver.find_element(*self.CONCENTBANNER).click()
+        try:
+            cookie_button = WebDriverWait(driver, 10).until(
+                self.driver.find_element(*self.CONCENTBANNER)
+            )
+            cookie_button.click()
+        except Exception as e: print(f"Erro ao aceitar cookies: {e}")
 
     def fill_form(self, first_name, last_name, address, email, phone):
         self.driver.find_element(*self.FIRST_NAME).send_keys(first_name)
