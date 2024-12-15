@@ -21,6 +21,10 @@ jobs:
         with:
           python-version: '3.9'
 
+      - name: Clean pip cache
+        run: |
+          pip cache purge
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
