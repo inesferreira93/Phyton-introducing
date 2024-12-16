@@ -17,8 +17,8 @@ def initialize_browser():
     return driver
 
 def capture_screenshot(driver, test_name):
-    if not os.path.exists("screenshots"): 
-        os.makedirs("screenshots")
-    screenshot_path = f"screenshots/{test_name}.png"
+    if not os.path.exists("artifacts"): 
+        os.makedirs("artifacts")
+    screenshot_path = f"artifacts/{test_name}.png"
     driver.save_screenshot(screenshot_path)
     print(f"Screenshot capturada: {screenshot_path}")
