@@ -31,7 +31,29 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r PythonProject/requirements.txt
+      
+      - name: Install ChromeDriver 
+        run: | 
+          sudo apt-get update
+          sudo apt-get install -y chromium-browser
+          sudo apt-get install -y chromium-chromedriver
 
       - name: Run tests
         run: |
           pytest --maxfail=1 --disable-warnings
+
+      - name: Clean artifacts directory
+        run: rm -rf artifacts
+
+      - name: Ensure artifacts directory exists
+        run: mkdir -p artifacts
+
+      - name: Check working directory
+        run: pwd
+
+      - name: Upload screenshots
+        if: always() && failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: screenshots
+          path: ${{ github.workspace }}/artifacts/

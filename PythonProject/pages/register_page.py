@@ -9,7 +9,7 @@ class RegisterPage:
     FIRST_NAME = (By.XPATH, "//input[@placeholder='First Name']")
     LAST_NAME = (By.XPATH, "//input[@placeholder='Last Name']")
     ADDRESS = (By.XPATH, "//textarea[@ng-model='Adress']")
-    EMAIL = (By.XPATH, "//input[@type='email']")
+    EMAIL = (By.XPATH, "")
     PHONE = (By.XPATH, "//input[@type='tel']")
     GENDER_MALE = (By.XPATH, "//input[@value='Male']")
     HOBBIES_MOVIES = (By.ID, "checkbox2")
