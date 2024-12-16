@@ -30,3 +30,11 @@ def capture_screenshot(driver, test_name):
     driver.save_screenshot(screenshot_path)
     print(f"Screenshot captured: {screenshot_path}")
 
+def pytest_configure():
+    artifacts_dir = "artifacts"
+    if os.path.exists(artifacts_dir):
+        shutil.rmtree(artifacts_dir)
+        print(f"Pasta {artifacts_dir} removida antes dos testes.")
+    os.makedirs(artifacts_dir)
+    print(f"Pasta {artifacts_dir} criada.")
+
