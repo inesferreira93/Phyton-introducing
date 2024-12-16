@@ -7,6 +7,8 @@ on:
   pull_request:
     branches:
       - main
+  schedule:
+    - cron: '0 16 * * 2'  # Execute every Tuesdays
 
 jobs:
   run-tests:
