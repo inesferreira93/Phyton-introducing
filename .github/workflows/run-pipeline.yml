@@ -42,13 +42,18 @@ jobs:
         run: |
           pytest --maxfail=1 --disable-warnings
 
-      - name: List artifacts directory 
-        run: |
-          ls -la artifacts/
+      - name: Clean artifacts directory
+        run: rm -rf artifacts
+
+      - name: Ensure artifacts directory exists
+        run: mkdir -p artifacts
+
+      - name: Check working directory
+        run: pwd
 
       - name: Upload screenshots
-        if: always()
+        if: always() && failure()
         uses: actions/upload-artifact@v3
         with:
           name: screenshots
-          path: artifacts/
+          path: ${{ github.workspace }}/artifacts/
