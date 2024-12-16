@@ -8,5 +8,6 @@ def test_fill_form():
     
     register_page = RegisterPage(browser)
     register_page.accept_user_concents()
+    register_page.fill_form()
     
     browser.quit()

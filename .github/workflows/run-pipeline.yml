@@ -35,3 +35,10 @@ jobs:
       - name: Run tests
         run: |
           pytest --maxfail=1 --disable-warnings
+
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: screenshots
+          paths: artifacts/
