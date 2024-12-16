@@ -1,5 +1,5 @@
 import pytest
-from PythonProject.utils.browser import initialize_browser, capture_screenshot
+from utils.browser import initialize_browser, capture_screenshot
 
 @pytest.fixture
 def browser():
